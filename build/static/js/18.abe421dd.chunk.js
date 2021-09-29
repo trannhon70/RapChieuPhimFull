@@ -1,0 +1,2 @@
+(this["webpackJsonpfirst-app"]=this["webpackJsonpfirst-app"]||[]).push([[18],{392:function(t,n,r){"use strict";r.r(n),r.d(n,"default",(function(){return i}));r(0);var s=r(1);function i(){return Object(s.jsx)("div",{children:"Dashboard"})}}}]);
+//# sourceMappingURL=18.abe421dd.chunk.js.map
