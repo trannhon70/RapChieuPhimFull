@@ -22,7 +22,7 @@ export default function DetailMobile(props) {
     }, [])
     return (
 
-        <div style={{ backgroundImage: `url(${filmDetail.hinhAnh})  , url(https://picsum.photos/id/1004/500/500)`, minHeight: '100vh', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+        <div style={{ backgroundImage: `url(${filmDetail.hinhAnh})  , url(https://picsum.photos/id/1004/500/500)`, minHeight: '100vh', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover',marginTop:'-22px' }}>
 
             <CustomCard style={{ minHeight: '100vh', padding: '10px' }}
                 effectColor="#C780FF" // required

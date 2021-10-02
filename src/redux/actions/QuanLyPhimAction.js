@@ -26,7 +26,7 @@ export const themPhimUpLoadHinhAction = (formData)=>{
         try{
             let result = await QLPhimService.themPhimUpLoadHinh(formData);
             alert('Thêm phim thành công ');
-            console.log('result', result);
+            // console.log('result', result);
         }
         catch(error){
             console.log(error.response?.data);
@@ -39,7 +39,7 @@ export const capNhatPhimUploadAction = (formData)=>{
         try{
             let result = await QLPhimService.capNhatPhimUpload(formData);
             alert('Cập nhật phim thành công ');
-            console.log('result', result);
+            // console.log('result', result);
             dispatch(layDanhSachPhimAction());
             history.push('/admin/Films');
         }

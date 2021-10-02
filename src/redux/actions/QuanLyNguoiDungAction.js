@@ -2,7 +2,7 @@ import axios from "axios";
 import { history } from "../../App";
 import { QLNguoiDungService } from "../../services/QuanLyNguoiDungService";
 import { DOMAIN, TOKEN, USER_LOGIN } from "../../util/settings/Config";
-import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
+import { DANG_NHAP_ACTION, SET_QUAN_LY_NGUOI_DUNG, SET_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
 
 export const getCheckoutAction = () => {
     return async dispatch => {
@@ -68,7 +68,23 @@ export const dangKyAction = (thongTinNguoiDung)=>{
             //sau khi đăng ký thành công chuyển hướng tranh
             alert('Chúc mừng bạn đã đăng ký tài khoản thành công');
             history.push('/login');
-            console.log({result});
+            // console.log({result});
+        }
+        catch (e) {
+            console.log({e});
+            alert('Tài khoản hoặc email của bạn đã được đăng ký !!');
+        }
+    }
+}
+
+export const dangKyUserAction = (themNguoiDung)=>{
+    return async dispatch=>{
+        try {
+            const result = await QLNguoiDungService.dangKyUser(themNguoiDung);
+            //sau khi đăng ký thành công chuyển hướng tranh
+            alert('Chúc mừng bạn đã đăng ký tài khoản thành công');
+            
+            // console.log({result});
         }
         catch (e) {
             console.log({e});
@@ -92,6 +108,38 @@ export const LayThongTinNguoiDungAction=(thongTinDangNhap)=>{
         }catch(err){
             console.log('err',err.response?.data);
             
+        }
+    }
+}
+
+export const layDanhSachNguoiDungAction = ()=>{
+    return async (dispatch)=>{
+        try{
+            //sử lý tham số
+            const result = await QLNguoiDungService.layDanhSachNguoiDung();
+            console.log('result: ',  result);
+            dispatch({
+                type:SET_QUAN_LY_NGUOI_DUNG,
+                quanLyNguoiDung: result.data.content
+            })
+        }
+        catch(err){
+            console.log('err',err);
+        }
+    }
+}
+
+export const xoaUserAction = (taiKhoan)=>{
+    return async (dispatch)=>{
+        try{
+            //sủ dụng tham số
+            const result = await QLNguoiDungService.xoaUser(taiKhoan);
+            alert('Xóa người dùng thành công ');
+            //sau khi xóa load lại danh sách người dùng mới 
+            dispatch(layDanhSachNguoiDungAction());
+        }
+        catch (e) {
+            console.log({e});
         }
     }
 }

@@ -28,7 +28,7 @@ const Edit = (props) => {
     };
 
     const {thongTinPhim} = useSelector(state => state.QuanLyPhimReducer);
-    console.log('thongTinPhim',thongTinPhim);
+    // console.log('thongTinPhim',thongTinPhim);
     const dispatch = useDispatch();
     useEffect(() => {
         let {id} = props.match.params;

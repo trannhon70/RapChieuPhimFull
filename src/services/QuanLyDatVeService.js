@@ -14,6 +14,7 @@ export class QuanLyDatVeService extends baseService{
 
     datVe = (thongTinDatVe= new ThongTinDatVe()) =>{//
         return this.post(`/api/QuanLyDatVe/DatVe`,thongTinDatVe);   
+        
     }
    
     taoLichChieu = (thongTinLichChieu)=>{

@@ -12,20 +12,11 @@ import TrangLoading from './components/Loading/TrangLoading';
 
 import AdminTemplate from './templates/AdminTemplate/AdminTemplate';
 import DetailMobile from './pages/Detail/DetailMobile';
-// import HomeMobile from './pages/Home/HomeMobile';
-// import Edit from './pages/Admin/Films/Edit/Edit';
-// import AddNew from './pages/Admin/Films/AddNew/AddNew';
-// import Films1 from './pages/Admin/Films/Films1';
-// import Films1 from './pages/Admin/Films/Films1';
-// import Home from './pages/Home/Home';
-// import Login from './pages/Login/Login';
-// import News from './pages/News/News';
-// import Contact from './pages/Contact/Contact';
-// import Register from './pages/Register/Register';
-// import Checkout from './pages/Checkout/Checkout';
-// import Films from './pages/Admin/Films/Films';
-// import Dashboard from './pages/Admin/Dashboard/Dashboard';
-// import ShowTime from './pages/Admin/ShowTime.js/ShowTime';
+import User from './pages/Admin/QuanLyNguoiDung/User/User';
+import AddUser from './pages/Admin/QuanLyNguoiDung/AddUser/AddUser';
+import EditUser from './pages/Admin/QuanLyNguoiDung/EditUser/EditUser';
+
+
 
 
 export const history = createBrowserHistory();
@@ -41,7 +32,7 @@ const Checkout = lazy(() => import('./pages/Checkout/Checkout'))
 // const Films = lazy(() => import('./pages/Admin/Films/Films'))
 const Films1 = lazy(() => import('./pages/Admin/Films/Films1'))
 const Edit = lazy(() => import('./pages/Admin/Films/Edit/Edit'))
-const Dashboard = lazy(() => import('./pages/Admin/Dashboard/Dashboard'))
+const Dashboard = lazy(() => import('./pages/Admin/QuanLyNguoiDung/User/User'))
 const ShowTime = lazy(() => import('./pages/Admin/ShowTime.js/ShowTime'))
 const AddNew = lazy(() => import('./pages/Admin/Films/AddNew/AddNew'))
 
@@ -57,7 +48,7 @@ function App() {
       </div>}>
         <Switch >
 
-          {/* <HomeTemplate path="/home" exact Component={Home} /> */}
+         
           <HomeTemplate path="/home" exact Component={Home} ComponentMobile={HomeMobile} />
 
           <HomeTemplate path="/news" exact Component={News} />
@@ -75,9 +66,12 @@ function App() {
 
           <AdminTemplate path="/admin/Films" exact Component={Films1} />
           <AdminTemplate path="/admin/Films/addnew" exact Component={AddNew} />
-          <AdminTemplate path="/admin/Films/edit/:id" exact Component={Edit} />
-          <AdminTemplate path="/admin/dashboard" exact Component={Dashboard} />
+          <AdminTemplate path="/admin/Films/edit/:id" exact Component={Edit} />          
           <AdminTemplate path="/admin/showtime/:id/:tenPhim" exact Component={ShowTime} />
+
+          <AdminTemplate path="/admin/user" exact Component={User} />
+          <AdminTemplate path="/admin/adduser" exact Component={AddUser} />
+          <AdminTemplate path="/admin/edituser/:id" exact Component={EditUser} />       
 
 
         </Switch>

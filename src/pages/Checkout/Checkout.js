@@ -37,6 +37,7 @@ function Checkout(props) {
 
     const renderSeats = () => {
         return danhSachGhe.map((ghe, index) => {
+            
             let classGheVip = ghe.loaiGhe === 'Vip' ? 'gheVip' : '';
             let classGheDaDat = ghe.daDat === true ? 'gheDaDat' : '';
             let classGheDangDat = '';
@@ -62,7 +63,7 @@ function Checkout(props) {
 
             return <Fragment key={index} >
                 <button onClick={() => {
-                     window.location.reload();
+                    //  window.location.reload();
                     dispatch(
                         {
                         type: DAT_VE,
@@ -74,6 +75,7 @@ function Checkout(props) {
                     {ghe.daDat ? classGheDaDuocDat != '' ? <i className="fa fa-user-ninja" style={{ fontSize: '18px' }}></i> : <i className="fa fa-times"   ></i> :classGheKhachDat !== ''?<i class="fa fa-user-slash"></i> : ghe.stt}
                 
                 </button>
+                
                 {(index + 1) % 16 === 0 ? <br /> : ''}
                 
             </Fragment>

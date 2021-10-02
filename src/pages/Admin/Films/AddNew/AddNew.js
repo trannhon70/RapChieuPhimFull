@@ -175,7 +175,7 @@ const AddNew = () => {
                 </Form.Item>
 
                 <Form.Item label="Tác vụ">
-                    <button type="submit" class="btn btn-primary">Thêm phim</button>
+                    <button type="submit" className="btn btn-primary">Thêm phim</button>
                 </Form.Item>
             </Form>
         </>

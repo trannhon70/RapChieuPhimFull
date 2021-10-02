@@ -4,11 +4,8 @@ import { NavLink, Route,Redirect } from "react-router-dom";
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
   VideoCameraOutlined,
+  UserAddOutlined
 } from '@ant-design/icons';
 import { USER_LOGIN } from "../../util/settings/Config";
 import { history } from "../../App";
@@ -47,20 +44,32 @@ const { SubMenu } = Menu;
           <img src="https://s-media-cache-ak0.pinimg.com/originals/43/3d/83/433d83f7e481f35245f8c6bb7c7591d8.gif" alt="https://s-media-cache-ak0.pinimg.com/originals/43/3d/83/433d83f7e481f35245f8c6bb7c7591d8.gif" style={{width:'100%',height:'64px'}}/>
          
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<UserOutlined />} onClick={() =>{
+            {/* <Menu.Item key="1" icon={<UserOutlined />} onClick={() =>{
               history.push('/admin/dashboard');
             }}>
               user
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<VideoCameraOutlined />} title="films">
+            </Menu.Item> */}
+            <SubMenu key="sub1" icon={<UserAddOutlined />} title="User management">
+              <Menu.Item key="1">
+                <NavLink to="/admin/user">user</NavLink>
+              </Menu.Item>
+              <Menu.Item key="2">
+              <NavLink to="/admin/adduser">add user</NavLink>
+              </Menu.Item>
               <Menu.Item key="3">
+              <NavLink to="/admin/edituser/:id">edit user</NavLink>
+              </Menu.Item>
+             
+            </SubMenu>
+            <SubMenu key="sub2" icon={<VideoCameraOutlined />} title="Movie manager">
+              <Menu.Item key="4">
                 <NavLink to="/admin/Films">films</NavLink>
               </Menu.Item>
-              <Menu.Item key="4">
+              <Menu.Item key="5">
               <NavLink to="/admin/Films/addnew">add films</NavLink>
               </Menu.Item>
-              <Menu.Item key="5">
-              <NavLink to="/admin/Films/edit/:id">edit</NavLink>
+              <Menu.Item key="6">
+              <NavLink to="/admin/Films/edit/:id">edit films</NavLink>
               </Menu.Item>
              
             </SubMenu>

@@ -5,6 +5,7 @@ import { dangKyAction } from '../../redux/actions/QuanLyNguoiDungAction';
 import './Register.scss';
 
 import { history } from '../../App';
+import { GROUPID } from '../../util/settings/Config';
 
 
 export default function Register(props) {
@@ -16,7 +17,7 @@ export default function Register(props) {
             email: '',
             soDt: '',
             hoTen: '',
-            maNhom: 'GP01'
+            maNhom: GROUPID
 
         },
        

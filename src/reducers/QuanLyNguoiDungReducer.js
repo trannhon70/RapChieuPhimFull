@@ -1,4 +1,4 @@
-import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from "../redux/actions/types/QuanLyNguoiDungType";
+import { DANG_NHAP_ACTION, SET_LAY_TT_NGUOI_DUNG, SET_QUAN_LY_NGUOI_DUNG, SET_THONG_TIN_NGUOI_DUNG } from "../redux/actions/types/QuanLyNguoiDungType";
 import { TOKEN, USER_LOGIN } from "../util/settings/Config";
 
 let user = null;
@@ -18,7 +18,9 @@ const stateDefault = {
         "loaiNguoiDung": null,
         "thongTinDatVe": []
     },
-    thongTinNguoiDung: {}
+    thongTinNguoiDung: {},
+    quanLyNguoiDung: [],
+    layTTNguoiDung: [],
 
 }
 export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
@@ -35,6 +37,16 @@ export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
 
         case SET_THONG_TIN_NGUOI_DUNG :{
             state.thongTinNguoiDung = action.thongTinNguoiDung;
+            return { ...state };
+        }
+
+        case SET_QUAN_LY_NGUOI_DUNG :{
+            state.quanLyNguoiDung = action.quanLyNguoiDung;
+            return { ...state };
+        }
+
+        case SET_LAY_TT_NGUOI_DUNG:{
+            state.layTTNguoiDung = action.layTTNguoiDung;
             return { ...state };
         }
 
